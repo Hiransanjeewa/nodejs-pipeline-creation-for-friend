@@ -24,10 +24,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - 
+        name: Building React app
+        working-directory: ./backend
+        run: |
+            npm run build
+            ls
+      
       -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: /backend/.
           push: true
           tags: hiransanjeewa/student-management-system-backend:latest
