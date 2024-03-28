@@ -47,4 +47,23 @@ jobs:
          key: ${{ secrets.SSH_PRIVATE_KEY }}
          script: |
           sudo apt update
-          ls
+          sudo apt install -y docker.io
+
+          docker stop student-management-system-backend
+          docker rm student-management-system-backend
+         
+        
+          docker rmi hiransanjeewa/student-management-system-backend:latest
+         
+
+          docker image prune
+          docker container prune
+         
+          docker pull hiransanjeewa/student-management-system-backend:latest
+   
+          docker run -d -p 80:5000 --name hiransanjeewa/student-management-system-backend:latest
+           
+          docker ps
+          docker images
+          docker ps -a
+          
