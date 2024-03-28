@@ -22,7 +22,7 @@ const adminRegister = async (req, res) => {
 
         if (existingAdminByEmail) {
             // If an admin with the same email exists, send a message
-            res.send({ message: 'Email already exists' });
+            res.send({ message: 'Email already exist' });
         }
         else if (existingSchool) {
             // If a school with the same name exists, send a message
