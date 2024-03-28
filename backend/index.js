@@ -10,7 +10,7 @@ const Routes = require("./routes/route.js");
 const app = express();
 
 // Set the port for the server to listen on
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 80;
 
 // Middleware to parse incoming JSON requests with a size limit of 10mb
 app.use(express.json({ limit: '10mb' }));
