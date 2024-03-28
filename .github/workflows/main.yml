@@ -60,14 +60,8 @@ jobs:
          
           docker pull hiransanjeewa/student-management-system-backend:latest
    
-          docker run -d -p 80:5000 --name hiransanjeewa/student-management-system-backend:latest
+          docker run -p 80:5000 --name hiransanjeewa/student-management-system-backend:latest
            
-
-        
-
-          docker ps
-          docker images
-          docker ps -a
 
 
 
