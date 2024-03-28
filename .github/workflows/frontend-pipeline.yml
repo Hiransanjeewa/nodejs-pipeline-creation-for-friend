@@ -18,7 +18,8 @@ jobs:
         frontend
     - name: Build and Deploy React app to GitHub Pages
       
-      with:
-        path: home/runner/work/nodejs-pipeline-creation-for-friend/nodejs-pipeline-creation-for-friend/frontend
       uses: omkartapale/react-deployment-gh-pages@v1.0.0
+      with:
+        sparse-checkout: |
+         frontend
      
