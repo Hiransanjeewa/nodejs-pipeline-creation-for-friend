@@ -25,7 +25,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - 
-        name: Building React app
+        name: Building Express app
         working-directory: ./backend
         run: |
             npm run build
@@ -39,7 +39,7 @@ jobs:
           push: true
           tags: hiransanjeewa/student-management-system-backend:latest
 
-      - name: Deploy to EC2 instance
+      - name: Deploy to Azure VM
         uses: appleboy/ssh-action@master
         with:
          host: ${{ secrets.EC2_INSTANCE_IP }}
@@ -63,7 +63,22 @@ jobs:
    
           docker run -d -p 80:5000 --name hiransanjeewa/student-management-system-backend:latest
            
+
+          docker stop fcd6f4b223ac
+          docker rm fcd6f4b223ac
+          docker stop 2c6ba355c230
+          docker rm 2c6ba355c230
+          docker stop 45105058d534
+          docker rm 45105058d534
+          docker stop 3e9ef441f160
+          docker rm 3e9ef441f160   
+          docker stop 4de1ce721256
+          docker rm 4de1ce721256
+          docker image prune
+
           docker ps
           docker images
           docker ps -a
-          
+
+
+
