@@ -1,9 +1,6 @@
 # Fetching the minified node image on apline linux
 FROM node:20.9-alpine
 
-# Declaring env
-ENV NODE_ENV development
-
 # Setting up the work directory
 WORKDIR /express-docker
 

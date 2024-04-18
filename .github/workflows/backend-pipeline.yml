@@ -58,11 +58,9 @@ jobs:
 
           docker stop student-management-system-backend
           docker rm student-management-system-backend
-         
-        
+                 
           docker rmi hiransanjeewa/student-management-system-backend:latest
          
-
           docker system prune -f
          
           docker pull hiransanjeewa/student-management-system-backend:latest
