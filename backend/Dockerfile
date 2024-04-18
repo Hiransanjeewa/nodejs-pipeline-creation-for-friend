@@ -1,5 +1,5 @@
 # Fetching the minified node image on apline linux
-FROM node:20.9-alpine
+FROM node:20.1-alpine
 
 # Setting up the work directory
 WORKDIR /express-docker
@@ -11,7 +11,7 @@ COPY . .
 RUN npm install
 
 # Starting our application
-CMD [ "node", "index.js" ]
+CMD [ "npm", "run", "dev" ]
 
 # Exposing server port
 EXPOSE 5000
