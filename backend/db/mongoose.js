@@ -12,10 +12,7 @@ const directDBURL = process.env.MONGO_URL;
 const connectToDatabase = async () => {
   try {
     // Function to connect to the MongoDB database
-    await mongoose.connect(directDBURL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(directDBURL);
 
     // Log a success message if the connection is successful
     console.log("Connected to MongoDB");
