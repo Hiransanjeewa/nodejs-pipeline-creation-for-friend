@@ -8,7 +8,7 @@ const studentRegister = async (req, res) => {
         // Generate salt and hash the password
         const salt = await bcrypt.genSalt(10);
         const hashedPass = await bcrypt.hash(req.body.password, salt);
-
+        console.log(req.body)
         // Check if the student with the same roll number, school, and class already exists
         const existingStudent = await Student.findOne({
             rollNum: req.body.rollNum,
@@ -33,6 +33,7 @@ const studentRegister = async (req, res) => {
             res.send(result);
         }
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 };
