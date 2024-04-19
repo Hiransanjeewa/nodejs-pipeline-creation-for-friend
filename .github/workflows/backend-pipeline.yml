@@ -7,7 +7,7 @@ on:
 
 jobs:
   Backend-Build-And-Deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       -
         name: Checkout
@@ -35,7 +35,6 @@ jobs:
         name: Building Express app
         working-directory: ./backend
         run: |
-            npm install
             npm run build
             ls
       
