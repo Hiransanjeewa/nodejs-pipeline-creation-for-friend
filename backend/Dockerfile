@@ -24,16 +24,3 @@ CMD npm run dev
 
 
 
-# Fetching the latest node image on alpine linux
-FROM node:alpine AS development
-
-# Declaring env
-ENV NODE_ENV development
-
-# Setting up the work directory
-WORKDIR /app
-
-# Copying package.json and package-lock.json
-COPY package.json package-lock.json /app/
-
-
