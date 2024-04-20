@@ -7,7 +7,6 @@ ENV NODE_ENV development
 WORKDIR /express-docker
 
 # Copying package.json and package-lock.json
-COPY package.json package-lock.json /express-docker/
 
 # Copying all the files in our project
 COPY . .
