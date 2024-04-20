@@ -37,6 +37,7 @@ jobs:
         run: |
             npm run build
             ls
+            docker ps
       
       -
         name: Build and push
