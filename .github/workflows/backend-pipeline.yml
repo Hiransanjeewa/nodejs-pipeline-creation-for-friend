@@ -37,9 +37,8 @@ jobs:
         run: |
             npm run build
             ls
-            docker buildx build --platform linux/amd64,linux/arm64 -t hiransanjeewa/student-management-system-backend:latest .
-            docker images
-            docker push hiransanjeewa/student-management-system-backend:latest
+            docker buildx build --platform linux/amd64,linux/arm64 -t hiransanjeewa/student-management-system-backend:latest --push .
+      # docker push hiransanjeewa/student-management-system-backend:latest
       
       # -
       #   name: Build and push
