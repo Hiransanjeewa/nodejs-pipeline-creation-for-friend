@@ -32,7 +32,7 @@ jobs:
           touch .env
           echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env
           cat .env
-    
+     
       -
         name: Build and push
         uses: docker/build-push-action@v5
@@ -60,5 +60,5 @@ jobs:
          
           docker pull hiransanjeewa/student-management-system-backend:latest
    
-          docker run -d -p 5000:5000 --name student-management-system-backend hiransanjeewa/student-management-system-backend:latest
+          docker run -d -p 80:5000 --name student-management-system-backend hiransanjeewa/student-management-system-backend:latest
          
